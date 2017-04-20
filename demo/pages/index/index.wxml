@@ -1,0 +1,100 @@
+<!--index.wxml-->
+<view class="container">
+ <view class="head">
+		<view class="head-title head-left head-active">
+			<text>热点</text>
+		</view>
+    <view class="head-title head-right">
+			<text>关注</text>
+		</view>
+	</view>
+
+  <view class="nav">
+    <view class="nav-list {{navIndex==0?'nav-active':''}}">足球现场</view>
+    <view class="nav-list  {{navIndex==1?'nav-active':''}}">足球生活</view>
+    <view class="nav-list  {{navIndex==2?'nav-active':''}}">足球美女</view>
+  </view>
+  
+  <!--<swiper class="nav">
+    <block wx:for="{{lists}}">
+      <swiper-item class="nav-swiper">
+        <view class="nav-list">{{item.title}}</view>
+      </swiper-item>
+    </block>
+  </swiper>-->
+
+
+    <view class="content">
+     <swiper style="height:405px" bindchange="swiperChange">
+       <block>
+       <!--足球现场-->
+       <swiper-item style="overflow-y:scroll">
+          <view class="items">
+            <view class="items-list" wx:for="{{lists}}" wx:key="{{index}}">
+              <view class="img-box">
+                <image src="{{item.img}}" class="img"></image>
+              </view>
+              <text class="font">{{item.title}}</text>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+       <block>
+       <!--足球生活 -->
+       <swiper-item style="overflow-y:scroll">
+          <view class="items">
+            <view class="items-list" wx:for="{{lists}}">
+              <view class="img-box">
+                <image src="{{item.img}}" class="img"></image>
+              </view>
+              <text class="font">{{item.title}}</text>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+       <block>
+       <!--足球美女 -->
+       <swiper-item style="overflow-y:scroll">
+          <view class="items">
+            <view class="items-list" wx:for="{{lists}}">
+              <view class="img-box">
+                <image src="{{item.img}}" class="img"></image>
+              </view>
+              <text class="font">{{item.title}}</text>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+      </swiper>
+    </view>
+
+
+
+
+
+  <view class="foot">
+    <navigator class="foot-list foot-active" url="/pages/index/index">
+      <text class="iconfont icon-shouye-shouye"></text>
+      <text class="foot-font">首页</text>
+    </navigator>
+    <navigator class="foot-list" url="/pages/index/index">
+      <text class="iconfont icon-fangdajing"></text>
+      <text class="foot-font">发现</text>
+    </navigator>
+    <navigator class="foot-list camera" url="/pages/index/index">
+      <text class="iconfont icon-zhaoxiangji"></text>
+    </navigator>
+    <navigator class="foot-list" url="/pages/index/index">
+      
+      <text class="foot-font">首页</text>
+    </navigator>
+    <navigator class="foot-list" url="/pages/index/index">
+      <text class="iconfont icon-wode"></text>
+      <text class="foot-font">我的</text>
+    </navigator>
+    <navigator class="foot-list" url="/pages/index/index">
+      <text class="iconfont icon-tuichu"></text>
+      <text class="foot-font">退出</text>
+    </navigator>
+  </view>
+</view>

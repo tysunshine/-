@@ -1,0 +1,27 @@
+//index.js
+//获取应用实例
+var app = getApp()
+Page({
+  data:{
+      select:"index",
+      navIndex:0,
+      nav:[{title:"足球现场"},
+            {title:"足球生活"},
+            {title:"足球美女"}],
+      lists:[
+        {img:"../../img/index/i1.png",title:"小丸子啊小丸子"},
+        {img:"../../img/index/i1.png",title:"小丸子啊小丸子"},
+        {img:"../../img/index/i1.png",title:"小丸子啊小丸子"},
+        {img:"../../img/index/i1.png",title:"小丸子啊小丸子"},
+        {img:"../../img/index/i1.png",title:"小丸子啊小丸子"},
+        {img:"../../img/index/i1.png",title:"小丸子啊小丸子"},
+        {img:"../../img/index/i1.png",title:"小丸子啊小丸子"}
+      ]
+  },
+  swiperChange(event){
+    //console.log(event.detail.current)
+    this.setData({
+      navIndex:event.detail.current
+    })
+  }
+})
